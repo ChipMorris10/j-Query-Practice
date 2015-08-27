@@ -1,110 +1,62 @@
-$(document).ready (function() {
-console.log("Sanity check");
+//  Exercise 1
+var button = document.getElementsByClassName("hoverButton")[0];
+console.log(button);
 
-// Exercise #1
-// On hover, change the button to green
-$('.red').hover(function() {
-    $(this).css('background-color', 'green');
-
-// When leaving the button, change the background color back to white
-}, function() {
-    $(this).css('background-color', 'white');
-});
+button.addEventListener("mouseenter", function(event) {
+    event.target.style.color = "blue";
 
 
-// Exercise #2
-// On click, change the background color
-$('#btn-bg').on('click', function() {
-    $('body').css( {
-        'background-color' :'#FFFA10',
+// Exercise 1a.
+// Add a mouseleave function
+button.addEventListener("mouseleave", function(event) {
+    event.target.style.color = "pink";
     });
 });
 
 
-// Exercise #2a
-// On double click, change the background color back to white
-$('#btn-bg').on('dblclick', function() {
-    $('body').css( {
-        'background-color' :'white',
-    });
+// Exerciese 1b - on mouseover, change the text color
+// var myDiv = document.getElementById('exerciseOne');
+myDiv.onmouseenter = function() {
+    event.target.style.color = "orange";
+};
+
+myDiv.onmouseleave = function() {
+    event.target.style.color = "black";
+};
+
+// ** How do I isolate the button by itself? **//
+// ** Error on line 5 in the console **//
+
+// Exercise 2
+var x = document.getElementById("btn-bg");
+console.log(x);
+
+x.addEventListener("click", function(event) {
+    event.target.style.backgroundColor = "yellow";
 });
 
+// ** I'm supposed to change the background of the page. I tired **//
+// var x = document.getElementById("body");
+// console.log(x);
 
+// x.addEventListener("click", function(event) {
+//     event.body.style.backgroundColor = "yellow";
+// });
 
-// Exercise #3
-// On double click, trigger an alert
-$('body').dblclick (function() {
-    alert("You just double-clicked somewhere on the page!");
+// Exercise 3
+var y = document.getElementById("container");
+
+y.addEventListener("dblclick", function(event) {
+    alert("Check it out.\nTwo lines.");
 });
 
-// Exercise #4
-// On click, clone the img i number of times
-$('img').on('click', function() {
-var e = $('img');
-    for (var i = 0; i < 1000; i++) {
-      e.clone().insertAfter(e);
+// Exercise 4
+var z = document.getElementById("tofu");
+
+z.addEventListener("click", function(event) {
+
+    for(var i = 0; i < 1000; i++) {
+        clone();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-// var $col = $("#colgroup-compare > col");
-// for(var i = 0; i < n; i++){
-//     $col.clone().appendTo('#colgroup-compare');
-// }
-
-
-
-// Exercise #5
-// Clicking id='up' makes all the <p> disappear (only those above the button)
-$('#up').on('click', function() {
-    $('p').hide();
-});
-
-
-// Exercise #6
-// Change each li to a different color when clicked
-$('#list').on('click', function() {
-    $('ul li:first').css( {
-        'color': 'red',
-    });
-    $('ul li:nth-child(2').css( {
-        'color': 'green'
-    });
-    $('ul li:last').css( {
-        'color': 'blue',
-    });
-});
-
-
-// Exercise #7
-// On click, randomly change the line to one of the colors in the array
-$('#random').on('click', function() {
-    var text = $('#random');
-    var original = text.css('color');
-    var colors = ['green', 'red', 'blue', 'purple', 'orange', 'pink'];
-    var col = Math.floor(Math.random() * colors.length);
-    text.css('color', colors[col]);
-});
-
-
-// Exercise #8
-$('#number').on('click', function() {
-    $(Math.floor(Math.random() * 1000) + 1);
-});
-
-
-
-});      // end document
-
-
 
