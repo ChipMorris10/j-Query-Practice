@@ -15,7 +15,7 @@ button.addEventListener("mouseleave", function(event) {
 
 
 // Exerciese 1b - on mouseover, change the text color
-// var myDiv = document.getElementById('exerciseOne');
+var myDiv = document.getElementById('exerciseOne');
 myDiv.onmouseenter = function() {
     event.target.style.color = "orange";
 };
@@ -34,19 +34,19 @@ changeColor.addEventListener("click", function(event) {
     event.target.style.backgroundColor = "yellow";
 });
 
-// ** I'm supposed to change the background of the page. I tired **//
-// var changeColor = document.getElementById("body");
-// console.log(changeColor);
+                // ** I'm supposed to change the background of the page. I tired **//
+                // var changeColor = document.getElementById("body");
+                // console.log(changeColor);
 
-// changeColor.addEventListener("click", function(event) {
-//     event.body.style.backgroundColor = "yellow";
-// });
+                // changeColor.addEventListener("click", function(event) {
+                //     event.body.style.backgroundColor = "yellow";
+                // });
 
 // Exercise 3
 var twoClicks = document.getElementById("container");
 
 twoClicks.addEventListener("dblclick", function(event) {
-    alert("Check it out.\nTwo lines.");
+    alert("ZACH - check it out.\nTwo lines.");
 });
 
 // Exercise 4
@@ -80,11 +80,13 @@ twoClicks.addEventListener("dblclick", function(event) {
 
 
 // Exercise 7
+var colorArr = ["green", "red", "blue", "purple", "orange", "pink"];
 var newLineColor = document.getElementById("random");
-changeColor.addEventListener("click", function() {
-    event.target.style.color = "yellow";
-});
 
+newLineColor.addEventListener("click", function() {
+    var color = colorArr[Math.floor(Math.random()*colorArr.length -1)];
+    event.target.style.color = color;
+});
 
 
 
