@@ -25,7 +25,7 @@ myDiv.onmouseleave = function() {
 };
 
 // ** How do I isolate the button by itself? **//
-// ** console shows an error on line 5, but I don't know why **//
+// ** document.body.style.backgroundColor = "red"; **//
 
 // Exercise 2
 var changeColor = document.getElementById("btn-bg");
@@ -46,37 +46,31 @@ changeColor.addEventListener("click", function(event) {
 var twoClicks = document.getElementById("container");
 
 twoClicks.addEventListener("dblclick", function(event) {
-    alert("ZACH - check it out.\nTwo lines.");
+    alert("ZACH - check it out.\nThree lines.\nSmall wins");
 });
 
 // Exercise 4
+// var foodPicture = addEventListener("click", function() {
+
 // var foodPicture = document.getElementById("tofu");
-
-// foodPicture.addEventListener("click", function(event) {
-//     console.log(foodPicture);
-
-//     for(var i = 0; i < 1000; i++) {
-//         clone();
+// for(var i = 0; i < 1000; i++) {
+//     var clonedImage = foodPicture.cloneNode(true);
+//     foodPicture.parentElement.appendChild(clonedImage);
 //     }
 // });
+
 
 // Exercise 5
 // Skip. Too much css according to Zach
 
 
 // Exercise 6
-// var changeLines = document.getElementById("list").children;
-
-// changeLineColor.addEventListener("click", function() {
-//     event.target.children.backgroundColor = (changeLineColor)[0],"red";
-// });
-
-
-    // var changeLines = document.getElemenById("list").children[0];
-
-    // changeLines.addEventListener("click", function(event) {
-    //     event.body.style.backgroundColor = "red";
-    // });
+var changeLines = document.getElementById("list").children;
+for (i = 0; i < changeLines.length; i ++) {
+    changeLines[i].addEventListener("click", function () {
+        this.style.color = this.innerHTML;
+    });
+}
 
 
 // Exercise 7
@@ -88,5 +82,14 @@ newLineColor.addEventListener("click", function() {
     event.target.style.color = color;
 });
 
+// Exercise 8
+var randomNumbers = document.getElementById("number");
+randomNumbers.addEventListener("click", function() {
+var numArr = [];
 
-
+for (i = 0; i < 50; i ++) {
+    var random = Math.floor(Math.random() * 1000) + 1;
+    numArr.push(random);
+    }
+    this.innerHTML=numArr;
+});
